@@ -129,6 +129,11 @@ app.get("/api/cpu-benchmark", async (req, res) => {
   }
 });
 
+import aiRecommendRouter from "./routes/ai-recommend.js";
+
+// API 라우터 등록
+app.use("/api", aiRecommendRouter);
+
 // ✅ 서버 실행
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
